@@ -26,24 +26,45 @@ You can also embed plots, for example:
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ######## First we load some libraries
+###########################################
+
 options(java.home="C:\\Program Files\\Java\\jre1.8.0_191\\")
 library("sf")
 library("tmap")
+
 ## We already installed the library so we only need to load them.
 ##Now we read the shapefile with the data
+#####################################################
+
 WBCOPER2 <- st_read("AssesLatv8.shp")
+
+####################################################
 ### we validate that the file is ok
+######################################################
+
 class(WBCOPER2)
 WBCOPER2
+
 ### The information seems to be ok, now we plot the first map
+#################################################################
+
 tmap_mode("plot")
 tm_shape(WBCOPER2) + tm_polygons("YEAR2015")
+
+################################################################################
 ### Now are some additional data to compare diferent years.
 tm_shape(WBCOPER2) + tm_fill(col=c("YEAR2010","YEAR2010","YEAR2015"),title=c('% Higher Education Emigrate Intention 2005','2010','2015')) + 
   tm_borders()
+  
+#################################################
 ### Maps are presenting the right information. But some adjustments are needed, Label are overlaping the map and we need some Title
+
+################################################################################
 tm_shape(WBCOPER2) + tm_fill(col=c("YEAR2005","YEAR2010","YEAR2015")) +
   tm_borders() + tm_layout(panel.labels=c("2005","2010","2015")) +
   tm_legend(legend.position = c("left", "bottom"),main.title = "%Latinos with Higher Education & Emigrate Intention", main.title.position = "right")
 
 ### This is the first basic map
+
+##########################################################################
+
