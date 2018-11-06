@@ -6,11 +6,12 @@ output: html_document:
 
 
 
-
 # First Part - ArcMap and RStudio a Comparative Report
-#### Word count 585
+#### Word count 587
 
-This review is based on the maps produced by Arcmap and R-Studio  for the first GIS assignment. Initially we are going to present the workflow followed to build the maps and second we are going to describe the process with each tool and last we are going conclude that both tools has their own advantages and disadvantages and its depending on the individual knowledge and resources to choose which one is suitable for the purpose.
+
+
+This review is based on the maps produced by Arcmap and R-Studio  for the first GIS assignment. Initially we are going to present the workflow followed to build the maps and secondly we are going to describe the process with each tool and lastly we are going conclude that both tools has their own advantages and disadvantages and its depending on the individual knowledge and resources to choose which one is suitable for the purpose.
 
 ![](workflow.png)
 
@@ -50,8 +51,8 @@ library("tmap")
 WBCOPER2 <- st_read("AssesLatv8.shp")
 
 ####################################################
-####------> we need to validate that the file is ok
-######################################################
+> we need to validate that the file is ok
+
 
 class(WBCOPER2)
 
